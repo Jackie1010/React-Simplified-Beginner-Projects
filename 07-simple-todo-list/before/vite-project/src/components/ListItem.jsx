@@ -1,4 +1,4 @@
-export default function ListItem({ name, completed, id, toggleTodo }) {
+export default function ListItem({ name, completed, id, toggleTodo, deleteTodo }) {
   return (
     <li className="list-item">
       <label className="list-item-label">
@@ -10,7 +10,9 @@ export default function ListItem({ name, completed, id, toggleTodo }) {
         />
         <span data-list-item-text>{name}</span>
       </label>
-      <button data-button-delete>Delete</button>
+      <button data-button-delete onClick={() => deleteTodo(id)}>
+        Delete
+      </button>
     </li>
   );
 }

@@ -7,17 +7,18 @@
 - **勾选完成**：受控 checkbox（`checked` + `onChange`），`toggleTodo` 用不可变更新
   （`{ ...item, completed }` 只改完成状态，其余字段保留）。
 - **Bonus（拆组件）已提前完成**：`components/ListItem.jsx` 负责单个列表项渲染。
+- **删除 todo**（README 任务 3）：`App.jsx` 的 `deleteTodo(id)` 用
+  `setListItem(prev => prev.filter(item => item.id !== id))`，通过 props 传给
+  `ListItem`，按钮 `onClick={() => deleteTodo(id)}` 包一层箭头函数。
 
-## 待完成 ⏳
+## 全部完成 ✅
 
-1. **删除 todo**（README 任务 3，最后一项）：
-   - 在 `App.jsx` 写 `deleteTodo(id)`，用 `setListItem(prev => prev.filter(item => item.id !== id))`。
-   - 通过 props 传给 `ListItem`：`deleteTodo={deleteTodo}`。
-   - `ListItem` 里按钮写 `onClick={() => deleteTodo(id)}`（箭头函数包一层，别写 `deleteTodo(id)`）。
+README 的三个任务 + Bonus 均已实现，`npm run build` 验证通过。
 
-2. 完成后在浏览器验证：添加 → 勾选划线 → 删除消失，三个都正常即完成。
+## 对照参考答案（`after/`）
 
-3. 对照 `after/` 参考答案（其组件名为 `TodoItem`，思路一致）检查差异。
+`after/` 组件名为 `TodoItem`、用 `crypto.randomUUID()`、`deleteTodo` 用 `filter`，
+与 `before/vite-project` 的实现思路一致，仅命名不同。
 
 ## 关键知识点回顾
 

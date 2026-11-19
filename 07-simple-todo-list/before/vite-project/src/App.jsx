@@ -26,6 +26,10 @@ function App() {
     );
   }
 
+  function deleteTodo(id) {
+    setListItem((prev) => prev.filter((item) => item.id !== id));
+  }
+
   return (
     <>
       <ul id="list">
@@ -37,6 +41,7 @@ function App() {
               completed={item.completed}
               id={item.id}
               toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
             />
           );
         })}
